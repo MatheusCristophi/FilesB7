@@ -43,7 +43,6 @@ public class FileController {
     @GetMapping("/download/{id}")
     public ResponseEntity<Resource> downloadFile(@PathVariable UUID id) {
         Resource resource = fileService.downloadFile(id, null);
-
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
