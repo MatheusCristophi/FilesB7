@@ -1,66 +1,82 @@
 # FilesB7
+
 ### 🚀 FilesB7 - Local File Transfer System
-O FilesB7 é um ecossistema de transferência de arquivos de via de mão dupla (PC ↔ Mobile) que opera via rede local (Wi-Fi). Desenvolvido para oferecer uma alternativa rápida, privada e sem as limitações de tamanho de arquivos impostas por serviços de nuvem convencionais.
+O FilesB7 é uma solução completa (Full Stack) projetada para facilitar a transferência de arquivos entre diferentes dispositivos (como PCs e dispositivos móveis) dentro de uma mesma rede local. O sistema combina a robustez de um backend em Java com a agilidade de um frontend moderno, eliminando a necessidade de cabos ou serviços de nuvem externos para movimentações rápidas de arquivos.
 
-### 🛠️ Tecnologias Utilizadas
-Backend: Java 17+ com Spring Boot
+### 🚀 Tecnologias Utilizadas
+O projeto foi construído utilizando uma arquitetura moderna e escalável:
 
-Banco de Dados: PostgreSQL (Gerenciado via Supabase)
+Backend
+Java & Spring Boot: Núcleo da aplicação, responsável pela lógica de negócio e processamento de arquivos.
 
-Persistência: Spring Data JPA / Hibernate
+Spring Data JPA / Hibernate: Gestão da persistência de dados e mapeamento objeto-relacional.
 
-Segurança & Histórico: Rastreamento de transferências por dispositivo e status.
+PostgreSQL (via Supabase): Banco de dados relacional para armazenamento de metadados dos arquivos e logs de transferência.
 
-Arquitetura: REST API com suporte a CORS para conexões mobile.
+Frontend
+JavaScript Puro: Utilizado para manipulação dinâmica do DOM e comunicação assíncrona com a API.
 
-### 📌 Funcionalidades
-[x] Upload Bidirecional: Envio de arquivos do celular para o PC e vice-versa.
+HTML5 & CSS3: Estrutura e estilização focada em responsividade para uso mobile.
 
-[x] Gerenciamento de Metadados: Armazenamento de informações como nome original, tamanho, tipo de conteúdo e data.
+Fetch API: Interface moderna para execução de requisições HTTP sem dependências externas (como Axios).
 
-[x] Histórico de Transferências: Registro detalhado de cada ação (Upload/Download) e status da operação.
+### 🛠️ Funcionalidades Principais
+Upload de Arquivos: Interface simplificada para envio de arquivos do dispositivo local para o servidor.
 
-[x] Storage Híbrido: Metadados no Supabase e arquivos físicos armazenados localmente no servidor (PC).
+Listagem e Download: Visualização de todos os arquivos disponíveis na rede para download imediato em outros dispositivos conectados.
 
-### 📂 Estrutura do Banco de Dados
-O projeto utiliza três entidades principais relacionadas:
+Integração com Banco de Dados: Registro detalhado de cada arquivo no PostgreSQL, permitindo rastreabilidade.
 
-Files: Armazena os detalhes dos arquivos e a referência de armazenamento.
+Acesso Mobile-PC: Otimizado para que o usuário possa subir um arquivo no computador e baixá-lo no celular (ou vice-versa) através do navegador.
 
-Devices: Identifica os dispositivos que interagem com o servidor.
+### 🏗️ Arquitetura do Sistema
 
-Transfer History: Log completo de transações com suporte a Enums (SUCCESS, PENDING, FAILED).
+Camada de Controller: Gerencia as requisições HTTP (POST para uploads, GET para downloads).
 
-### ⚙️ Como rodar o projeto
-1. Pré-requisitos
-JDK 17 ou superior.
+Camada de Service: Contém a lógica de manipulação de arquivos no sistema de arquivos local ou armazenamento configurado.
 
-Maven.
+Camada de Repository: Interface de comunicação com o banco de dados Supabase.
 
-Conta no Supabase.
+### 🔧 Configuração e Instalação
 
-2. Configuração do Ambiente
-Crie um arquivo .env na raiz do projeto ou configure no seu application.properties:
+1. Clonando o repositório
 ```
-DB_URL=jdbc:postgresql://your-supabase-url.com:5432/postgres
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+git clone https://github.com/MatheusCristophi/FilesB7.git
+
+cd FilesB7
 ```
+
+2. Configurando o Banco de Dados <br>
+
+No arquivo .env.local, configure sua conexão com o Supabase e reescreva o arquivo para .env :
+```
+DB_URL_POSTGRES=jdbc:postgresql://db.your-project.supabase.co:5432/postgres
+DB_USER_POSTGRES=postgres
+DB_PASSWORD_POSTGRES=sua_senha_aqui
+```
+
+3. Executando o Backend
+
+Certifique-se de ter o Maven instalado e execute:
 ```
 mvn spring-boot:run
 ```
-### 📱 Como conectar o celular
-Certifique-se de que o PC e o Celular estão na mesma rede Wi-Fi.
 
-Descubra o IP do seu PC (ipconfig no Windows).
 
-Acesse os endpoints via mobile(Voce pode fazer isso com o PostMan mobile):
-```
-Listar Arquivos: GET http://seu-ip:8080/api/files
+📂 Estrutura de Pastas
 
-Download: GET http://seu-ip:8080/api/files/download/{id}
+/src/main/java: Contém toda a lógica de controllers, services e repositories do Spring Boot.
 
-Upload: POST http://seu-ip:8080/api/files/upload (via multipart/form-data)
-```
-### 👨‍💻 Autor
-Matheus - Desenvolvedor Web / Estudante de Ciência da Computação
+/src/main//resources: Contém o index.html, style.css e script.js responsáveis pela interface.
+
+👨‍💻 Autor
+
+Matheus Cristophi
+
+Estudante de Ciência da Computação (UNIFAGOC)
+
+Desenvolvedor Backend / Full Stack
+
+Dica de uso: 
+
+Para acessar do celular, descubra o IP da sua máquina na rede local (ex: 192.168.1.15) e aponte o navegador do dispositivo móvel para o endereço onde o sistema está rodando.
