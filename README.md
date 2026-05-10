@@ -19,8 +19,6 @@ A aplicação permite envio e recebimento de arquivos através de uma interface 
 
 ## Backend
 - Java
-- Socket Programming
-- TCP/IP
 - Java IO
 - Maven
 
@@ -65,7 +63,6 @@ FilesB7/
 - Interface web para interação do usuário
 - Manipulação de arquivos no backend
 - Persistência local de arquivos
-- Comunicação via sockets TCP
 - Integração frontend + backend
 
 ---
@@ -96,12 +93,10 @@ Responsabilidades:
 - Recebimento e envio de arquivos
 - Processamento das transferências
 - Manipulação de streams
-- Comunicação TCP/IP
 - Persistência de arquivos
 
 Tecnologias:
 - Java
-- Socket Programming
 - Java IO
 - Maven
 
@@ -119,10 +114,8 @@ Backend → Processamento → Resposta
 ```
 
 Conceitos aplicados:
-- TCP/IP
 - Sockets
 - Streams
-- Comunicação em rede
 - Transferência de dados
 - Integração frontend/backend
 
