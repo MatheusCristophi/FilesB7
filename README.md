@@ -1,82 +1,218 @@
-# FilesB7
+# 📁 FilesB7
 
-### 🚀 FilesB7 - Local File Transfer System
-O FilesB7 é uma solução completa (Full Stack) projetada para facilitar a transferência de arquivos entre diferentes dispositivos (como PCs e dispositivos móveis) dentro de uma mesma rede local. O sistema combina a robustez de um backend em Java com a agilidade de um frontend moderno, eliminando a necessidade de cabos ou serviços de nuvem externos para movimentações rápidas de arquivos.
+Sistema fullstack de transferência bidirecional de arquivos desenvolvido utilizando Java no backend e JavaScript puro no frontend.
 
-### 🚀 Tecnologias Utilizadas
-O projeto foi construído utilizando uma arquitetura moderna e escalável:
+O projeto foi criado com foco em aprofundar conhecimentos em:
+- desenvolvimento backend
+- comunicação cliente-servidor
+- transferência de arquivos
+- APIs e comunicação em rede
+- manipulação de arquivos
+- integração frontend + backend
+- arquitetura de software
 
-Backend
-Java & Spring Boot: Núcleo da aplicação, responsável pela lógica de negócio e processamento de arquivos.
+A aplicação permite envio e recebimento de arquivos através de uma interface web integrada ao backend Java.
 
-Spring Data JPA / Hibernate: Gestão da persistência de dados e mapeamento objeto-relacional.
+---
 
-PostgreSQL (via Supabase): Banco de dados relacional para armazenamento de metadados dos arquivos e logs de transferência.
+# 🚀 Tecnologias Utilizadas
 
-Frontend
-JavaScript Puro: Utilizado para manipulação dinâmica do DOM e comunicação assíncrona com a API.
+## Backend
+- Java
+- Socket Programming
+- TCP/IP
+- Java IO
+- Maven
 
-HTML5 & CSS3: Estrutura e estilização focada em responsividade para uso mobile.
+## Frontend
+- HTML5
+- CSS3
+- JavaScript Vanilla
 
-Fetch API: Interface moderna para execução de requisições HTTP sem dependências externas (como Axios).
+## Ferramentas
+- Git
+- GitHub
 
-### 🛠️ Funcionalidades Principais
-Upload de Arquivos: Interface simplificada para envio de arquivos do dispositivo local para o servidor.
+---
 
-Listagem e Download: Visualização de todos os arquivos disponíveis na rede para download imediato em outros dispositivos conectados.
+# 🏗️ Arquitetura do Projeto
 
-Integração com Banco de Dados: Registro detalhado de cada arquivo no PostgreSQL, permitindo rastreabilidade.
+O projeto foi estruturado utilizando separação entre frontend e backend, organizando responsabilidades entre comunicação em rede, manipulação de arquivos e interface da aplicação.
 
-Acesso Mobile-PC: Otimizado para que o usuário possa subir um arquivo no computador e baixá-lo no celular (ou vice-versa) através do navegador.
+Estrutura conceitual:
 
-### 🏗️ Arquitetura do Sistema
-
-Camada de Controller: Gerencia as requisições HTTP (POST para uploads, GET para downloads).
-
-Camada de Service: Contém a lógica de manipulação de arquivos no sistema de arquivos local ou armazenamento configurado.
-
-Camada de Repository: Interface de comunicação com o banco de dados Supabase.
-
-### 🔧 Configuração e Instalação
-
-1. Clonando o repositório
+```bash
+FilesB7/
+ ┣ backend/
+ ┃ ┣ config/
+ ┃ ┣ devices/
+ ┃ ┣ files/
+ ┃ ┗ transferHistory/
+ ┣ resources/
+ ┃ ┣ html/
+ ┃ ┣ css/
+ ┃ ┗ js/
 ```
-git clone https://github.com/MatheusCristophi/FilesB7.git
 
+---
+
+# 📚 Funcionalidades
+
+- Upload de arquivos
+- Download de arquivos
+- Comunicação cliente-servidor
+- Transferência bidirecional de arquivos
+- Interface web para interação do usuário
+- Manipulação de arquivos no backend
+- Persistência local de arquivos
+- Comunicação via sockets TCP
+- Integração frontend + backend
+
+---
+
+# 🌐 Frontend
+
+O frontend foi desenvolvido utilizando JavaScript puro (Vanilla JS), sem utilização de frameworks externos.
+
+Funcionalidades implementadas:
+- Interface de envio de arquivos
+- Comunicação com backend
+- Manipulação de eventos
+- Atualização dinâmica da interface
+
+Tecnologias:
+- HTML5
+- CSS3
+- JavaScript Vanilla
+
+---
+
+# ⚙️ Backend
+
+O backend foi desenvolvido em Java com foco em comunicação em rede e gerenciamento de arquivos.
+
+Responsabilidades:
+- Gerenciamento de conexões
+- Recebimento e envio de arquivos
+- Processamento das transferências
+- Manipulação de streams
+- Comunicação TCP/IP
+- Persistência de arquivos
+
+Tecnologias:
+- Java
+- Socket Programming
+- Java IO
+- Maven
+
+---
+
+# 🌍 Comunicação Cliente-Servidor
+
+A aplicação utiliza comunicação cliente-servidor para realizar transferência de arquivos entre frontend e backend.
+
+Fluxo básico:
+
+```text
+Frontend → Requisição → Backend
+Backend → Processamento → Resposta
+```
+
+Conceitos aplicados:
+- TCP/IP
+- Sockets
+- Streams
+- Comunicação em rede
+- Transferência de dados
+- Integração frontend/backend
+
+---
+
+# 📂 Estrutura do Projeto
+
+```bash
+FilesB7/
+ ┣ backend/
+ ┃ ┣ src/
+ ┃ ┃ ┣ config/
+ ┃ ┃ ┣ devices/
+ ┃ ┃ ┣ files/
+ ┃ ┃ ┗ transferHistory/
+ ┣ frontend/
+ ┃ ┣ index.html
+ ┃ ┣ css/
+ ┃ ┗ js/
+ ┣ pom.xml
+ ┗ README.md
+```
+
+---
+
+# ▶️ Como Executar o Projeto
+
+## Clonar o repositório
+
+```bash
+git clone https://github.com/MatheusCristophi/FilesB7.git
+```
+
+## Realizar a conexão com seu Supabase
+
+renomear o .env.local para .env
+```
+SUPABASE_URL=
+SUPABASE_USER=
+SUPABASE_PASSWORD=
+```
+
+---
+
+## Entrar na pasta do projeto
+
+```bash
 cd FilesB7
 ```
 
-2. Configurando o Banco de Dados <br>
+---
 
-No arquivo .env.local, configure sua conexão com o Supabase e reescreva o arquivo para .env :
+# ▶️ Executar Backend
+
+## Rodar com sua IDE
+
+## Navegar no endereço
+
 ```
-DB_URL_POSTGRES=jdbc:postgresql://db.your-project.supabase.co:5432/postgres
-DB_USER_POSTGRES=postgres
-DB_PASSWORD_POSTGRES=sua_senha_aqui
+localhost:8080
 ```
+---
 
-3. Executando o Backend
+# 🧠 Conceitos Aplicados
 
-Certifique-se de ter o Maven instalado e execute:
-```
-mvn spring-boot:run
-```
+- Desenvolvimento Fullstack
+- Programação Orientada a Objetos
+- Armazenamento em nuvem com supabase
+- Comunicação Cliente-Servidor
+- Socket Programming
+- Manipulação de Arquivos
+- Transferência de Dados
+- Java Backend
+- JavaScript Vanilla
+- Integração Frontend + Backend
+- Arquitetura Modular
+- Versionamento com Git/GitHub
 
+---
 
-📂 Estrutura de Pastas
+# 🎯 Objetivo do Projeto
 
-/src/main/java: Contém toda a lógica de controllers, services e repositories do Spring Boot.
+O projeto foi desenvolvido com objetivo de aprofundar conhecimentos em desenvolvimento fullstack, comunicação em rede e transferência de arquivos utilizando Java no backend e JavaScript puro no frontend.
 
-/src/main//resources: Contém o index.html, style.css e script.js responsáveis pela interface.
+Além disso, a aplicação serviu para praticar integração entre frontend e backend, manipulação de arquivos e construção de aplicações distribuídas.
 
-👨‍💻 Autor
+---
 
-Matheus Cristophi
+# 👨‍💻 Autor
 
-Estudante de Ciência da Computação (UNIFAGOC)
+Desenvolvido por Matheus Cristopher.
 
-Desenvolvedor Backend / Full Stack
-
-Dica de uso: 
-
-Para acessar do celular, descubra o IP da sua máquina na rede local (ex: 192.168.1.15) e aponte o navegador do dispositivo móvel para o endereço onde o sistema está rodando.
+GitHub: https://github.com/MatheusCristophi
