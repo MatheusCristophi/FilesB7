@@ -41,7 +41,7 @@ async function upload() {
                 body: formData
             });
 
-            if (res.ok = false) {
+            if (res.ok == false) {
                 alert("Erro no upload.");
             } else{
                 alert("Sucesso!");
